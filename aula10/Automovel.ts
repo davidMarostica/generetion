@@ -5,6 +5,7 @@ export class Automovel extends Terrestre {
   private _numeroPortas: number;
   private _placa: string;
   private _marcha: number;
+  private _marca: string;
 
   constructor(
     capacidade: number,
@@ -13,13 +14,15 @@ export class Automovel extends Terrestre {
     cor: string,
     numeroPortas: number,
     placa: string,
-    marcha: number
+    marcha: number,
+    marca: string
   ) {
     super(capacidade, numeroRodas, velocidade);
     this._cor = cor;
     this._numeroPortas = numeroPortas;
     this._placa = placa;
-    this._marcha = marcha;
+    this._marcha = Number(marcha);
+    this._marca = marca;
   }
 
   public get cor() {
@@ -54,11 +57,20 @@ export class Automovel extends Terrestre {
     this._marcha = marcha;
   }
 
+  public get marca() {
+    return this._marca;
+  }
+
+  public set marca(marca: string) {
+    this._marca = marca;
+  }
+
   public visualizar(): void {
     super.visualizar();
     console.log("cor: " + this._cor);
     console.log("Número de portas: " + this._numeroPortas);
     console.log("Placa: " + this._placa);
     console.log("Marcha: " + this._marcha);
+    console.log("Marca: " + this._marca);
   }
 }
