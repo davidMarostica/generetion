@@ -1,4 +1,4 @@
-export abstract class Atleta {
+export abstract class Pessoa {
   // Classe Abstrata
 
   private _nome: string;
@@ -14,9 +14,6 @@ export abstract class Atleta {
   public set nome(nome: string) {
     this._nome = nome;
   }
-
-  //MÉTODOS ABSTRATOS - APENAS A ASSINATURA DO MÉTODO
-  public abstract aquecer(): void;
 
   // MÉTODOS AUXILIARES
   public visualizar(): void {
